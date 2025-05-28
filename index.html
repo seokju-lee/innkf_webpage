@@ -182,7 +182,7 @@
             alt="System Overview Diagram"
             style="max-width: 100%; height: auto;">
           <figcaption class="has-text-centered is-size-7 mt-2">
-            The overall architecture of the Invariant Neural-Augmented Kalman Filter (InNKF). InNKF involves the predict and update step of InEKF and Neural Compensator (NC) that reduces error values obtained which is designed to SE2(3) Group Generation Network (SEGGN).
+            The overall architecture of the Invariant Neural-Augmented Kalman Filter (InNKF). InNKF involves the predict and update step of InEKF and Neural Compensator (NC) that reduces error values obtained which is designed to SE$_2$(3) Group Generation Network (SEGGN).
           </figcaption>
         </figure>
       </div>
@@ -314,26 +314,53 @@
   </div>
 </section>
 
+<style>
+  /* 1) 컬럼을 세로 flex container 로 */
+  .align-captions .column {
+    display: flex;
+    flex-direction: column;
+  }
+  /* 2) figure도 세로 flex, caption은 밑으로 고정 */
+  .align-captions .column figure {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .align-captions .column figcaption {
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+  /* 3) 오른쪽만 약간 내려주기 */
+  .align-captions .column:nth-child(2) figure {
+    margin-top: 1rem;
+  }
+  /* 4) 이미지: 원본 비율 유지 */
+  .align-captions .column figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+
 <section class="section">
   <div class="container">
-    <h2 class="title is-3 has-text-centered">
-      Real-World Experiment
-    </h2>
-    <div class="columns is-centered">
-      <!-- 왼쪽: Training Process -->
+    <h2 class="title is-3 has-text-centered">Real-World Experiment</h2>
+    <div class="columns is-centered align-captions">
+      <!-- 왼쪽 그림 -->
       <div class="column is-one-third">
-        <figure class="image">
+        <figure>
           <img src="static/images/indoor2.jpg" alt="Indoor">
-          <figcaption class="has-text-centered is-size-7 mt-2">
+          <figcaption class="has-text-centered is-size-7">
             Real-world experimental setup with gravel, wooden planks, and a cart to create unstructured terrain.
           </figcaption>
         </figure>
       </div>
-      <!-- 오른쪽: SEGGN Result -->
+      <!-- 오른쪽 그림: margin-top 으로 살짝 내림 -->
       <div class="column is-one-third">
-        <figure class="image">
+        <figure>
           <img src="static/images/real.png" alt="Real Result">
-          <figcaption class="has-text-centered is-size-7 mt-2">
+          <figcaption class="has-text-centered is-size-7">
             ATE and 10 Seconds RE (Mean and Standard Deviation) of state estimation in the real world.
           </figcaption>
         </figure>
@@ -341,6 +368,7 @@
     </div>
   </div>
 </section>
+
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
