@@ -164,11 +164,38 @@
   <div class="container">
     <h2 class="title is-3 has-text-centered">System Overview</h2>
     <div class="columns is-centered">
-      <div class="column is-two-thirds">
-        <figure class="image is-4by3">
-          <img src="static/images/innkf_architecture.jpg" alt="System Overview Diagram">
+      <div class="column is-half">
+        <figure class="image">
+          <img
+            src="static/images/innkf_architecture.jpg"
+            alt="System Overview Diagram"
+            style="max-width: 100%; height: auto;">
           <figcaption class="has-text-centered is-size-7 mt-2">
-            The overall architecture of the Invariant Neural-Augmented Kalman Filter (InNKF). InNKF involves the predict and update step of InEKF and Neural Compensator (NC) that reduces error values obtained which is designed to SE$_2$(3) Group Generation Network (SEGGN).
+            Invariant Neural-Augmented Kalman Filter (InNKF) Architecture.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SE₂(3) Group Generation Network Architecture -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      SE<sub>2</sub>(3) Group Generation Network (SEGGN)
+    </h2>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="static/images/se3_ggn.jpg" alt="SEGGN Architecture Diagram">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            The SE\(_2\)(3) Group Generation Network (SEGGN) consists of three steps:
+            (1) generating the weights for the elements of \(\mathfrak{se}_2(3)\),
+            (2) performing a linear combination of the TCN outputs with the elements of
+            \(\mathfrak{se}_2(3)\),
+            and (3) applying exponential mapping to the results from step (2).
           </figcaption>
         </figure>
       </div>
@@ -180,24 +207,20 @@
 <section class="section">
   <div class="container">
     <h2 class="title is-3 has-text-centered">
-      SE<sub>2</sub>(3) Group Generation Network (SEGGN) Architecture
+      Training Process
     </h2>
     <div class="columns is-centered">
       <div class="column is-half">
         <figure class="image">
-          <img src="static/images/se3_ggn.jpg" alt="SEGGN Architecture Diagram">
+          <img src="static/images/training_process.jpg" alt="SEGGN Architecture Diagram">
           <figcaption class="has-text-centered is-size-7 mt-2">
-            The SE<sub>2</sub>(3) Group Generation Network (SEGGN) consists of three steps:
-            (1) generating the weights for the elements of <span class="has-text-weight-semibold">&mathfrak;se</span><sub>2</sub>(3),
-            (2) performing a linear combination of the TCN outputs with the elements of <span class="has-text-weight-semibold">&mathfrak;se</span><sub>2</sub>(3),
-            and (3) applying exponential mapping to the results from step (2).
+            Training process of the Neural Compensator (NC): The dataset is collected in 50 time-step sequences, where state estimates are obtained at each time step using the InEKF. The right-invariant error is computed and labeled only for the final time step. Based on this labeled error, the SEGGN is then trained using the output and a loss function.
           </figcaption>
         </figure>
       </div>
     </div>
   </div>
 </section>
-
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
