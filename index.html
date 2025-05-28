@@ -164,9 +164,12 @@
   <div class="container">
     <h2 class="title is-3 has-text-centered">System Overview</h2>
     <div class="columns is-centered">
-      <div class="column is-half">
-        <figure class="image">
+      <div class="column is-two-thirds">
+        <figure class="image is-4by3">
           <img src="static/images/innkf_architecture.jpg" alt="System Overview Diagram">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            The overall architecture of the Invariant Neural-Augmented Kalman Filter (InNKF). InNKF involves the predict and update step of InEKF and Neural Compensator (NC) that reduces error values obtained which is designed to SE$_2$(3) Group Generation Network (SEGGN).
+          </figcaption>
         </figure>
       </div>
     </div>
@@ -183,6 +186,12 @@
       <div class="column is-half">
         <figure class="image">
           <img src="static/images/se3_ggn.jpg" alt="SEGGN Architecture Diagram">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            The SE<sub>2</sub>(3) Group Generation Network (SEGGN) consists of three steps:
+            (1) generating the weights for the elements of <span class="has-text-weight-semibold">&mathfrak;se</span><sub>2</sub>(3),
+            (2) performing a linear combination of the TCN outputs with the elements of <span class="has-text-weight-semibold">&mathfrak;se</span><sub>2</sub>(3),
+            and (3) applying exponential mapping to the results from step (2).
+          </figcaption>
         </figure>
       </div>
     </div>
