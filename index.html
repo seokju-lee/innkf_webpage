@@ -214,43 +214,6 @@
   </div>
 </section>
 
-<!-- SE₂(3) Group Generation Network Architecture -->
-<!-- <section class="section">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">
-      Training Process
-    </h2>
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <figure class="image">
-          <img src="static/images/training_process.jpg" alt="Trainig Process">
-          <figcaption class="has-text-centered is-size-7 mt-2">
-            Training process of the Neural Compensator (NC): The dataset is collected in 50 time-step sequences, where state estimates are obtained at each time step using the InEKF. The right-invariant error is computed and labeled only for the final time step. Based on this labeled error, the SEGGN is then trained using the output and a loss function.
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <h2 class="title is-3 has-text-centered">
-      SEGGN Result
-    </h2>
-    <div class="columns is-centered">
-      <div class="column is-one-third">
-        <figure class="image">
-          <img src="static/images/seggn_result.jpg" alt="SEGGN Result">
-          <figcaption class="has-text-centered is-size-7 mt-2">
-            The visual and numerical results of the trained SEGGN. The first row illustrates the transformed coordinates based on the SEGGN output. The second row presents numerical evaluations, including the Frobenius norm error, calculated as $||\textbf{R}^\top\textbf{R} - \textbf{I}||_F$, and the determinant of $\textbf{R}$, both shown as histograms.
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <section class="section">
   <div class="container">
     <h2 class="title is-3 has-text-centered">
@@ -308,6 +271,70 @@
           <img src="static/images/ate.png" alt="Position Result">
           <figcaption class="has-text-centered is-size-7 mt-2">
             Comparison of Absolute Trajectory Error (ATE) in state estimation among the two baselines and InNKF (proposed method) across different terrains.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      Raisim Result 1
+    </h2>
+    <div class="columns is-centered">
+      <div class="column is-two-thirds">
+        <figure class="image">
+          <img src="static/images/raisim_screenshot.jpg" alt="Raisim Result 1">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            State estimation results in Raisim for two laps around a 20 m $\times$ 20 m square path on field terrain. The black line represents the ground truth, the blue line represents InEKF, and the red line represents InNKF (proposed). (a): Bird's-eye view, (b): Side view.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      Raisim Result 2
+    </h2>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <figure class="image">
+          <img src="static/images/raisim_result_.jpg" alt="Raisim Result 2">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            Relative Errors (RE) in Raisim across different environments (indoor, field, mountain, hill). In each box, blue represents InEKF, green represents NN, and red represents InNKF (proposed).
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      Real-World Experiment
+    </h2>
+    <div class="columns is-centered">
+      <!-- 왼쪽: Training Process -->
+      <div class="column is-one-third">
+        <figure class="image">
+          <img src="static/images/indoor2.jpg" alt="Indoor">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            Real-world experimental setup with gravel, wooden planks, and a cart to create unstructured terrain.
+          </figcaption>
+        </figure>
+      </div>
+      <!-- 오른쪽: SEGGN Result -->
+      <div class="column is-one-third">
+        <figure class="image">
+          <img src="static/images/real.jpg" alt="Real Result">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            ATE and 10 Seconds RE (Mean and Standard Deviation) of state estimation in the real world.
           </figcaption>
         </figure>
       </div>
