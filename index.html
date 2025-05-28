@@ -223,9 +223,63 @@
     <div class="columns is-centered">
       <div class="column is-one-third">
         <figure class="image">
-          <img src="static/images/training_process.jpg" alt="SEGGN Architecture Diagram">
+          <img src="static/images/training_process.jpg" alt="Trainig Process">
           <figcaption class="has-text-centered is-size-7 mt-2">
             Training process of the Neural Compensator (NC): The dataset is collected in 50 time-step sequences, where state estimates are obtained at each time step using the InEKF. The right-invariant error is computed and labeled only for the final time step. Based on this labeled error, the SEGGN is then trained using the output and a loss function.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      SEGGN Result
+    </h2>
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <figure class="image">
+          <img src="static/images/seggn_result.jpg" alt="SEGGN Result">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            The visual and numerical results of the trained SEGGN. The first row illustrates the transformed coordinates based on the SEGGN output. The second row presents numerical evaluations, including the Frobenius norm error, calculated as $||\textbf{R}^\top\textbf{R} - \textbf{I}||_F$, and the determinant of $\textbf{R}$, both shown as histograms.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      Position Estimation Results
+    </h2>
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <figure class="image">
+          <img src="static/images/position_result.jpg" alt="Position Result">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            Position estimation results across four terrains (stairs, slope, uneven terrain, discrete obstacle) over a time interval of 0 - 140 s. The solid black line represents the ground truth, the blue dashed line represents InEKF, and the red dashed line represents the InNKF (proposed method).
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered">
+      Absoulte Trajectory Error (ATE) Results
+    </h2>
+    <div class="columns is-centered">
+      <div class="column is-one-third">
+        <figure class="image">
+          <img src="static/images/ate.png" alt="Position Result">
+          <figcaption class="has-text-centered is-size-7 mt-2">
+            Comparison of Absolute Trajectory Error (ATE) in state estimation among the two baselines and InNKF (proposed method) across different terrains.
           </figcaption>
         </figure>
       </div>
